@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :plants, only: [] do
+    resources :plant_tags, only: [:new, :create]
+  end
   resources :gardens do
     resources :plants, only: :create
   end
